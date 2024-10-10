@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="./assets/logo.png" alt="drawing" width="100">
+   <img src="./assets/logo.png" alt="drawing" width="500">
    <h2 align="center">Curriculum Fine-tuning of Vision Foundation Model for Medical Image Classification Under Label Noise</h2>
    <p align="center">
       <a href="https://scholar.google.com/citations?user=Ctm3p8wAAAAJ&hl=en"><strong>Yeonguk Yu</strong></a>
@@ -87,7 +87,7 @@ python train_linear.py -d 'data_name' -g 'gpu-num' -n 'noise_rate' -s 'save_name
 ~~~
 for example,
 ~~~
-python train_linear.py -d 'data_name' -g 'gpu-num' -n resnet18 -s 'save_name'
+python train_linear.py -d ham10000 -g 0 -n 0.2 -s dinov2s_linear_0.2
 ~~~
 
 ### To train a model by a single rein adapter with DINOv2-small architecture
@@ -96,7 +96,7 @@ python train_rein.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
 for example,
 ~~~
-python train_rein.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
+python train_rein.py -d ham10000 -g 0 -n 0.2 -s dinov2s_single_rein_0.2
 ~~~
 
 
@@ -106,7 +106,7 @@ python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate 
 ~~~
 for example, 
 ~~~
-python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
+python train_rein_ours_three_head.py -d ham10000 -g 0 -n 0.2 -s dinov2s_cufit_0.2
 ~~~
 
     
