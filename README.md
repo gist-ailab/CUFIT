@@ -62,9 +62,29 @@ pip install -r requirement.txt
 
 
 ### Dataset Preparation
-   Some public datasets are required to be downloaded for running evaluation.   
-   - [HAM10000](https://challenge.isic-archive.com/data/#2018)
-   - [APTOS-2019](https://www.kaggle.com/c/aptos2019-blindness-detection/data)
+   Some public datasets are required to be downloaded for running experiments.
+<details>
+<summary>HAM10000 preparation</summary>
+   
+1. Download the training data, training ground truth, Test data, Test ground truth of task 3 in <a href="https://sites.google.com/view/gistailab/">this link</a>.
+   
+2. Place the zip files in "CUFIT/data" folder and extract them.
+   
+3. Run the python code "ham10000.py" in "CUFIT/data".
+   
+4. This will create a folder named "ham10000" where images are sorted by its corrseponding disease.
+</details>
+
+<details>
+<summary>APTOS-2019 preparation</summary>
+
+1. Download the zip files by clicking "download all" button in <a href="https://www.kaggle.com/c/aptos2019-blindness-detection/data">kaggle site</a>.
+
+2. Place the zip files in "CUFIT/data" folder and extract it.
+
+3. This will create a folder named "APTOS-2019".
+
+</details>
 
 ### Config file may need to be changed for your path to download. For example,
 ~~~
@@ -73,7 +93,7 @@ pip install -r requirement.txt
     "epoch" : "100",
     "id_dataset" : "./data/ham10000",   # Your path to dataset
     "batch_size" : 32,
-    "save_path" : "./checkpoint/ham10000",   # Your path to checkpoint
+    "save_path" : "./checkpoints/ham10000",   # Your path to checkpoint
     "num_classes" : 7
 }
 ~~~
@@ -84,29 +104,29 @@ Place the data and create checkpoint folder following this directory structure:
    CUFIT/
    ├── assets/
    ├── checkpoints/
-   │   └── HAM10000/
-   │   └── APTOS-2019/
+      ├── HAM10000/
+      └── APTOS-2019/
    ├── conf/
-   │   └── HAM10000.json
-   |   └── aptos2019.json
+      ├── HAM10000.json
+      └── aptos2019.json
    ├── data/
-   |   ├── HAM10000/
+      ├── HAM10000/
           ├── test/
           └── train/
-   |   └── APTOS-2019
+      └── APTOS-2019
           ├── test_images/
           ├── train_images/
           ├── val_images/
           ├── test.csv
           ├── train_1.csv
           └── valid.csv
-   └── rein/
+   ├── rein/
    └── utils/
    ```
 
 ---
 ## How to Run
-### To train a model by linear probing with DINOv2-small architecture
+### To train a model by the linear probing with DINOv2-small architecture
 ~~~
 python train_linear.py -d 'data_name' -g 'gpu-num' -n 'noise_rate' -s 'save_name'
 ~~~
@@ -125,7 +145,7 @@ python train_rein.py -d ham10000 -g 0 -n 0.2 -s dinov2s_single_rein_0.2
 ~~~
 
 
-### To train a model by CUFIT with DINOv2-small architecture
+### To train a model by the CUFIT with DINOv2-small architecture
 ~~~
 python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
