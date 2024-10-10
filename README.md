@@ -4,7 +4,7 @@
    <p align="center">
       <a href="https://scholar.google.com/citations?user=Ctm3p8wAAAAJ&hl=en"><strong>Yeonguk Yu</strong></a>
       ·
-      <a><strong>Minhwan Ko</strong></a>
+      <a href="https://scholar.google.com/citations?user=LXKIlW8AAAAJ&hl=en"><strong>Minhwan Ko</strong></a>
       ·
       <a href="https://scholar.google.com/citations?user=-O_DjyEAAAAJ&hl=en"><strong>Sungho Shin</strong></a>
       ·
