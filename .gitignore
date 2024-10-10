@@ -1,0 +1,10 @@
+*.tar
+*.txt
+*.pyc
+*.pth
+*.zip
+*.jpg
+
+data/ham10000/*
+data/aptos-2019/*
+checkpoints/*
