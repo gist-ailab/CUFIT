@@ -82,7 +82,9 @@ pip install -r requirement.txt
 
 2. Place the zip files in "CUFIT/data" folder and extract it.
 
-3. This will create a folder named "APTOS-2019".
+3. Create a folder named "APTOS-2019" in "CUFIT/data".
+
+4. Place the extracted files in the "APTOS-2019" folder.
 
 </details>
 
