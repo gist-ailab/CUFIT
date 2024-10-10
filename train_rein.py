@@ -4,14 +4,11 @@ import torch.nn as nn
 
 import argparse
 import timm
-import numpy as np
 import utils
 
-import random
 import rein
 
 import dino_variant
-from sklearn.metrics import f1_score
 
 def train():
     parser = argparse.ArgumentParser()
@@ -65,23 +62,22 @@ def train():
     model.load_state_dict(dino_state_dict, strict=False)
     model.linear_rein = nn.Linear(variant['embed_dim'], config['num_classes'])
     model.to(device)
-    
-    print(model)
+
     criterion = torch.nn.CrossEntropyLoss()
     model.eval()
     
-    if args.data == 'dr':
-        num_samples = {0: 25810, 1: 2443, 2: 5292, 3: 873, 4: 708}
-        class_weight = torch.tensor([1-num_samples[x]/sum(num_samples.values()) for x in num_samples]).to(device)
-        print(class_weight)
-        criterion = torch.nn.CrossEntropyLoss(weight=class_weight)
-    # optimizer = torch.optim.SGD(model.parameters(), lr = 0.01, momentum=0.9, weight_decay = 1e-05)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay = 1e-5)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, lr_decay)
     saver = timm.utils.CheckpointSaver(model, optimizer, checkpoint_dir= save_path, max_history = 1) 
     print(train_loader.dataset[0][0].shape)
 
-    # f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
+    print('## Trainable parameters')
+    model.train()
+    for n, p in model.named_parameters():
+        if p.requires_grad == True:
+            print(n)
+
+    f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
     avg_accuracy = 0.0
     for epoch in range(max_epoch):
         ## training
@@ -95,7 +91,7 @@ def train():
             
             features = model.forward_features(inputs)
             features = features[:, 0, :]
-            outputs = model.linear(features)
+            outputs = model.linear_rein(features)
             loss = criterion(outputs, targets)
             loss.backward()            
             optimizer.step()

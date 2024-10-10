@@ -1,5 +1,4 @@
 import torch.utils.data as data
-import torch
 import os
 
 from PIL import Image

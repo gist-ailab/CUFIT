@@ -4,10 +4,8 @@ import torch.nn as nn
 
 import argparse
 import timm
-import numpy as np
 import utils
 
-import random
 import rein
 
 import dino_variant
@@ -35,7 +33,6 @@ def train():
 
     lr_decay = [int(0.5*max_epoch), int(0.75*max_epoch), int(0.9*max_epoch)]
 
-
     if args.data == 'ham10000':
         train_loader, valid_loader = utils.get_noise_dataset(data_path, noise_rate=noise_rate, batch_size = batch_size)
     elif args.data == 'aptos':
@@ -44,17 +41,7 @@ def train():
         train_loader, valid_loader = utils.get_mnist_noise_dataset(args.data, noise_rate=noise_rate, batch_size = batch_size)
     elif 'cifar' in args.data:
         train_loader, valid_loader = utils.get_cifar_noise_dataset(args.data, data_path, batch_size = batch_size,  noise_rate=noise_rate)
-        
-    num_samples = {}
-    for i in range(config['num_classes']):
-        num_samples[i] = 0
-    for sample in train_loader.dataset:
-        num_samples[sample[1]]+=1
-    print(num_samples)
-    
-    class_weight = torch.tensor([sum(num_samples.values())/num_samples[x] for x in num_samples])
-    print(class_weight)
-        
+               
     if args.netsize == 's':
         model_load = dino_variant._small_dino
         variant = dino_variant._small_variant
@@ -75,8 +62,6 @@ def train():
     model.linear = nn.Linear(variant['embed_dim'], config['num_classes'])
     model.linear_rein = nn.Linear(variant['embed_dim'], config['num_classes'])
     model.to(device)
-    
-    # print(model.state_dict()['blocks.11.mlp.fc2.weight'])
     criterion = torch.nn.CrossEntropyLoss(reduction='none')
     model.eval()
     
@@ -90,7 +75,6 @@ def train():
     model.eval()
     model2.eval()
 
-    # optimizer = torch.optim.SGD(model.parameters(), lr = 0.01, momentum=0.9, weight_decay = 1e-05)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay = 1e-5)
     optimizer2 = torch.optim.Adam(model2.parameters(), lr=1e-3, weight_decay = 1e-5)
 
@@ -99,8 +83,14 @@ def train():
     saver = timm.utils.CheckpointSaver(model2, optimizer, checkpoint_dir= save_path, max_history = 1) 
     print(train_loader.dataset[0][0].shape)
 
+    print('## Trainable parameters')
+    model2.train()
+    for n, p in model2.named_parameters():
+        if p.requires_grad == True:
+            print(n)
+    
+    f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
     avg_accuracy = 0.0
-    avg_kappa = 0.0
     for epoch in range(max_epoch):
         ## training
         model.train()

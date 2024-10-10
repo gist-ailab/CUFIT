@@ -4,10 +4,7 @@ import torch.nn as nn
 
 import argparse
 import timm
-import numpy as np
 import utils
-
-import random
 
 import dino_variant
 
@@ -60,19 +57,19 @@ def train():
     criterion = torch.nn.CrossEntropyLoss()
     model.eval()
         
-    if args.data == 'dr':
-        num_samples = {0: 25810, 1: 2443, 2: 5292, 3: 873, 4: 708}
-        class_weight = torch.tensor([1-num_samples[x]/sum(num_samples.values()) for x in num_samples]).to(device)
-        print(class_weight)
-        criterion = torch.nn.CrossEntropyLoss(weight=class_weight)
-
-
-    # optimizer = torch.optim.SGD(model.parameters(), lr = 0.01, momentum=0.9, weight_decay = 1e-05)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4, weight_decay = 1e-5)
 
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, lr_decay)
     saver = timm.utils.CheckpointSaver(model, optimizer, checkpoint_dir= save_path, max_history = 1) 
     print(train_loader.dataset[0][0].shape)
+
+    print('## Trainable parameters')
+    model.train()
+    for n, p in model.named_parameters():
+        if p.requires_grad == True:
+            print(n)
+
+    f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
     avg_accuracy = 0.0
     for epoch in range(max_epoch):
         ## training

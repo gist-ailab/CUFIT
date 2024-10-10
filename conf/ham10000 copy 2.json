@@ -1,0 +1,7 @@
+{
+    "epoch" : "100",
+    "id_dataset" : "./data/ham10000",
+    "batch_size" : 32,
+    "save_path" : "./checkpoints/HAM10000/",
+    "num_classes" : 7
+}

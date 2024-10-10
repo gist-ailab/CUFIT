@@ -1,9 +1,4 @@
 import torch
-import numpy as np
-from sklearn.metrics import roc_auc_score, f1_score, cohen_kappa_score, balanced_accuracy_score
-import sklearn.metrics as sk
-
-import torch.nn.functional as F
 
 recall_level_default = 0.95
 
