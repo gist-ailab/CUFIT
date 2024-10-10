@@ -17,10 +17,10 @@
 </p>
 
 
-Ours Curriculum FIne-tuning of Vision Foundation Model (CUFIT) offers 
+Our **CU**rriculum **FI**ne-**T**uning of Vision Foundation Model **(CUFIT)** offers a robust training framework for medical multi-class image classification under noisy label conditions. 
+Leveraging vision foundation models (VFMs) pretrained on large-scale datasets, CUFIT effectively handles noisy labels without modifying the feature extractor, using linear probing. Subsequently, it employs a curriculum fine-tuning approach, beginning with linear probing to ensure robustness to noisy samples, followed by fine-tuning two adapters for enhanced classification performance. CUFIT outperforms conventional methods across various medical image benchmarks, achieving superior results at various noise rates on datasets such as HAM10000 and APTOS-2019, highlighting its capability to address the challenges posed by noisy labels in medical datasets.
 
-
-# Getting Started
+# 🚀 Getting Started
 ## Environment Setup
    This code is tested under Linux 20.04 and Python 3.7.7 environment, and the code requires following packages to be installed:
     
@@ -86,9 +86,14 @@ python normratio.py -n resnet18 -d cifar10 -g 0 -s baseline
 ~~~
 
     
-# License
-The source code of this repository is released only for academic use. See the [license](LICENSE) file for details.
-
-# Acknowledgement
+# 🤝 Acknowledgements & Support
 This work was supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government (MSIT) (No. 2022-0-00951, Development of Uncertainty Aware Agents Learning by Asking Questions).
 
+## 🌟 License
+The source code of this repository is released only for academic use. See the [license](LICENSE) file for details.
+
+## 📚 Citation
+If you use CUFIT in your research, please consider citing us.
+```bibtex
+TBD
+```
