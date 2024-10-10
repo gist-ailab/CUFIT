@@ -1,4 +1,5 @@
 <p align="center">
+   <img src="./assets/logo.png" alt="drawing" width="100">
    <h2 align="center">Curriculum Fine-tuning of Vision Foundation Model for Medical Image Classification Under Label Noise</h2>
    <p align="center">
       <a href="https://scholar.google.com/citations?user=Ctm3p8wAAAAJ&hl=en"><strong>Yeonguk Yu</strong></a>
@@ -31,6 +32,13 @@
 Our **CU**rriculum **FI**ne-**T**uning of Vision Foundation Model **(CUFIT)** offers a robust training framework for medical multi-class image classification under noisy label conditions. 
 Leveraging vision foundation models (VFMs) pretrained on large-scale datasets, CUFIT effectively handles noisy labels without modifying the feature extractor, using linear probing. Subsequently, it employs a curriculum fine-tuning approach, beginning with linear probing to ensure robustness to noisy samples, followed by fine-tuning two adapters for enhanced classification performance. CUFIT outperforms conventional methods across various medical image benchmarks, achieving superior results at various noise rates on datasets such as HAM10000 and APTOS-2019, highlighting its capability to address the challenges posed by noisy labels in medical datasets.
 
+<br/><br/>
+<p align="center">
+  <img src="./assets/intro.png"width="800"/>
+</p>
+
+**TL;DR**: We propose CUFIT, a robust fine-tuning method for vision foundation models under noisy label conditions, based on the advantages of linear probing and adapters.
+
 ## 🚀 Getting Started
 ### Clone the Repository
    ```bash
@@ -41,11 +49,9 @@ Leveraging vision foundation models (VFMs) pretrained on large-scale datasets, C
 ### Environment Setup
    This code is tested under Linux 20.04 and Python 3.8.18 environment, and the code requires following main packages to be installed:
     
-   - [Pytorch](https://pytorch.org/): Tested under 1.11.0 version of Pytorch-GPU.
-   - [torchvision](https://pytorch.org/vision/stable/index.html): which will be installed along Pytorch. Tested under 0.6.0 version.
-   - [timm](https://github.com/rwightman/pytorch-image-models): Tested under 0.4.12 version.
-   - [scipy](https://www.scipy.org/): Tested under 1.4.1 version.
-   - [scikit-learn](https://scikit-learn.org/stable/): Tested under 0.22.1 version.
+   - [Pytorch](https://pytorch.org/): Tested under 2.0.1 version of Pytorch-GPU.
+   - [torchvision](https://pytorch.org/vision/stable/index.html): which will be installed along Pytorch. Tested under 0.15.2 version.
+   - [MedMNIST](https://medmnist.com/): which is needed for experiments with BloodMnist, OrgancMnist. Tested under 3.0.1 version.
 
 you may use the follwoing lines.
 ```bash
@@ -77,21 +83,30 @@ pip install -r requirement.txt
 ## How to Run
 ### To train a model by linear probing with DINOv2-small architecture
 ~~~
-python train_linear.py -d 'data_name' -g 'gpu-num' -n resnet18 -s 'save_name'
+python train_linear.py -d 'data_name' -g 'gpu-num' -n 'noise_rate' -s 'save_name'
 ~~~
 for example,
 ~~~
-python train_baseline.py -d cifar10 -g 0 -n resnet18 -s baseline
+python train_linear.py -d 'data_name' -g 'gpu-num' -n resnet18 -s 'save_name'
+~~~
+
+### To train a model by a single rein adapter with DINOv2-small architecture
+~~~
+python train_rein.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
+~~~
+for example,
+~~~
+python train_rein.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
 
 
 ### To train a model by CUFIT with DINOv2-small architecture
 ~~~
-python eval.py -n resnet18 -d 'data_name' -g 'gpu_num' -s 'save_name' -m featurenorm
+python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
 for example, 
 ~~~
-python eval.py -n resnet18 -d cifar10 -g 0 -s baseline 
+python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
 
     
