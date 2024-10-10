@@ -20,11 +20,11 @@
 
 <p align="center">
    <a href=''>
-      <img src='https://img.shields.io/badge/CUFIT-Presentation-ffffff?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzSDVjLTEuMSAwLTIgLjktMiAydjE0YzAgMS4xLjkgMiAyIDJoMTRjMS4xIDAgMi0uOSAyLTJWNWMwLTEuMS0uOS0yLTItMnpNOSAxN0g3di01aDJ2NXptNCAwaC0ydi03aDJ2N3ptNCAwaC0yVjhoMnY5eiIvPjwvc3ZnPg==&logoColor=white&labelColor=black&color=9370DB' alt='Results'>
+      <img src='https://img.shields.io/badge/CUFIT-Presentation-ffffff?style=for-the-badge&logo=YouTube&logoColor=red&labelColor=black&color=red' alt='Results'>
    </a>
 
    <a href="">
-      <img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=adobeacrobatreader&logoWidth=20&logoColor=white&labelColor=black&color=94DD15' alt='Paper PDF'>
+      <img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=adobeacrobatreader&logoWidth=20&logoColor=FFD700&labelColor=black&color=FFD700' alt='Paper PDF'>
    </a>
 </p>
 
