@@ -6,11 +6,11 @@
       ·
       <a><strong>Minhwan Ko</strong></a>
       ·
-      <a"><strong>Sungho Shin</strong></a>
+      <a href="https://scholar.google.com/citations?user=-O_DjyEAAAAJ&hl=en"><strong>Sungho Shin</strong></a>
       ·
       <a"><strong>Kangmin Kim</strong></a>
       ·
-      <a"><strong>Kyoobin Lee</strong></a>
+      <a href="https://scholar.google.com/citations?user=QVihy5MAAAAJ&hl=en"><strong>Kyoobin Lee</strong></a>
      <br>
      <a href="https://sites.google.com/view/gistailab/"><strong>Artificial Intelligence LAB</strong></a>
       GIST, South Korea
@@ -66,7 +66,7 @@ pip install -r requirement.txt
    - [HAM10000](https://challenge.isic-archive.com/data/#2018)
    - [APTOS-2019](https://www.kaggle.com/c/aptos2019-blindness-detection/data)
 
-### Config file need to be changed for your path to download. For example,
+### Config file may need to be changed for your path to download. For example,
 ~~~
 # conf/ham10000.json
 {
@@ -78,6 +78,31 @@ pip install -r requirement.txt
 }
 ~~~
 
+
+Place the data and create checkpoint folder following this directory structure:
+   ```plaintext
+   CUFIT/
+   ├── assets/
+   ├── checkpoints/
+   │   └── HAM10000/
+   │   └── APTOS-2019/
+   ├── conf/
+   │   └── HAM10000.json
+   |   └── aptos2019.json
+   ├── data/
+   |   ├── HAM10000/
+          ├── test/
+          └── train/
+   |   └── APTOS-2019
+          ├── test_images/
+          ├── train_images/
+          ├── val_images/
+          ├── test.csv
+          ├── train_1.csv
+          └── valid.csv
+   └── rein/
+   └── utils/
+   ```
 
 ---
 ## How to Run
