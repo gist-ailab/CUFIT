@@ -1,0 +1,7 @@
+{
+    "epoch" : "100",
+    "id_dataset" : "./data/bloodmnist",
+    "batch_size" : 32,
+    "save_path" : "./checkpoints/BLOODMNIST/",
+    "num_classes" : 8
+}

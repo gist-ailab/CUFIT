@@ -1,0 +1,7 @@
+{
+    "epoch" : "100",
+    "id_dataset" : "./data/organcmnist",
+    "batch_size" : 32,
+    "save_path" : "./checkpoints/ORGANCMNIST/",
+    "num_classes" : 11
+}
