@@ -77,7 +77,6 @@ def train():
         if p.requires_grad == True:
             print(n)
 
-    f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
     avg_accuracy = 0.0
     for epoch in range(max_epoch):
         ## training

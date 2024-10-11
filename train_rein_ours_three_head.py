@@ -89,7 +89,6 @@ def train():
         if p.requires_grad == True:
             print(n)
     
-    f = open(os.path.join(save_path, 'epoch_acc.txt'), 'w')
     avg_accuracy = 0.0
     for epoch in range(max_epoch):
         ## training
@@ -128,7 +127,7 @@ def train():
             loss_rein = linear_accurate*criterion(outputs, targets)
             loss_rein2 = linear_accurate2*criterion(outputs2, targets)
             loss_linear = criterion(outputs_, targets)
-            loss = loss_linear.mean()+loss_rein.mean()#+ loss_rein2.mean()
+            loss = loss_linear.mean()+loss_rein.mean()
             loss.backward()            
             optimizer.step() # + outputs_
 
