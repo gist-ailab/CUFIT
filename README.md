@@ -131,7 +131,7 @@ Place the data and create checkpoint folder following this directory structure:
 
 ---
 ## How to Run
-### To train a model by the linear probing with DINOv2-small architecture
+### - To train a model by the linear probing with DINOv2-small architecture
 ~~~
 python train_linear.py -d 'data_name' -g 'gpu-num' -n 'noise_rate' -s 'save_name'
 ~~~
@@ -139,8 +139,9 @@ for example,
 ~~~
 python train_linear.py -d ham10000 -g 0 -n 0.2 -s dinov2s_linear_0.2
 ~~~
+<br/>
 
-### To train a model by a single rein adapter with DINOv2-small architecture
+### - To train a model by a single rein adapter with DINOv2-small architecture
 ~~~
 python train_rein.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
@@ -148,9 +149,9 @@ for example,
 ~~~
 python train_rein.py -d ham10000 -g 0 -n 0.2 -s dinov2s_single_rein_0.2
 ~~~
+<br/>
 
-
-### To train a model by the CUFIT with DINOv2-small architecture
+### - To train a model by the CUFIT with DINOv2-small architecture
 ~~~
 python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
@@ -158,7 +159,7 @@ for example,
 ~~~
 python train_rein_ours_three_head.py -d ham10000 -g 0 -n 0.2 -s dinov2s_cufit_0.2
 ~~~
-
+<br/>
     
 ## 🤝 Acknowledgements & Support
 This work was supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government (MSIT) (No. 2022-0-00951, Development of Uncertainty Aware Agents Learning by Asking Questions).
