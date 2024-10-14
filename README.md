@@ -163,7 +163,7 @@ python train_rein_ours_three_head.py -d ham10000 -g 0 -n 0.2 -s dinov2s_cufit_0.
     
 ## 🤝 Acknowledgements & Support
 This work waspartly supported by Institute of Information & communications Technology Planning & Evaluation (IITP) grant funded by the Korea government(MSIT) (No. RS-2022-II0951, Development of Uncertainty-Aware Agents Learning by Asking Questions, 90%) and Institute of Civil Military
- Technology Cooperation funded by the Defense Acquisition Program Administration and Ministry of Trade, Industry and Energy of Korean government under grant No. 22-CM-GU-08, 10%).
+ Technology Cooperation funded by the Defense Acquisition Program Administration and Ministry of Trade, Industry and Energy of Korean government under grant No. 22-CM-GU-08, 10%.
 
 ### 🌟 License
 The source code of this repository is released only for academic use. See the [license](LICENSE) file for details.
