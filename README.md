@@ -153,11 +153,11 @@ python train_rein.py -d ham10000 -g 0 -n 0.2 -s dinov2s_single_rein_0.2
 
 ### - To train a model by the CUFIT with DINOv2-small architecture
 ~~~
-python train_rein_ours_three_head.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
+python train_cuft.py -d 'data_name' -g 'gpu-num' -n 'noise_rate -s 'save_name'
 ~~~
 for example, 
 ~~~
-python train_rein_ours_three_head.py -d ham10000 -g 0 -n 0.2 -s dinov2s_cufit_0.2
+python train_cufit.py -d ham10000 -g 0 -n 0.2 -s dinov2s_cufit_0.2
 ~~~
 <br/>
     
