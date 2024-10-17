@@ -113,7 +113,7 @@ Place the data and create checkpoint folder following this directory structure:
       └── APTOS-2019/
    ├── conf/
       ├── HAM10000.json
-      └── aptos2019.json
+      └── aptos.json
    ├── data/
       ├── HAM10000/
           ├── test/
