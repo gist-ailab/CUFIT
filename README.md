@@ -58,7 +58,7 @@ Leveraging vision foundation models (VFMs) pretrained on large-scale datasets, C
 
 you may use the follwoing lines.
 ```bash
-conda env create -n cufit python=3.8
+conda create -n cufit python=3.8
 conda activate cufit
 pip install -r requirement.txt
 ```
