@@ -22,7 +22,7 @@
    <a href="https://youtu.be/2RtJeuZqshA">
       <img src='https://img.shields.io/badge/CUFIT-Presentation-ffffff?style=for-the-badge&logo=YouTube&logoColor=red&labelColor=black&color=red' alt='Results'>
    </a>
-   <a href="">
+   <a href="http://arxiv.org/abs/2412.00150">
       <img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=adobeacrobatreader&logoWidth=20&logoColor=FFD700&labelColor=black&color=FFD700' alt='Paper PDF'>
    </a>
 </p>
