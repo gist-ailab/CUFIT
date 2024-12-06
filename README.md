@@ -20,13 +20,13 @@
 
 <p align="center">
    <a href="https://youtu.be/2RtJeuZqshA">
-      <img src='https://img.shields.io/badge/CUFIT-Presentation-ffffff?style=for-the-badge&logo=YouTube&logoColor=red&labelColor=black&color=red' alt='Results'>
+      <img src='https://img.shields.io/badge/Presentation-Video-ffffff?style=for-the-badge&logo=YouTube&logoColor=red&labelColor=black&color=red' alt='Results'>
    </a>
    <a href="http://arxiv.org/abs/2412.00150">
       <img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=adobeacrobatreader&logoWidth=20&logoColor=FFD700&labelColor=black&color=FFD700' alt='Paper PDF'>
    </a>
    <a href='assets/poster.png'>
-      <img src='https://img.shields.io/badge/CUFIT-Presentation-ffffff?style=for-the-badge&logo=airplayvideo&logoColor=green&labelColor=black&color=green' alt='Poster'>
+      <img src='https://img.shields.io/badge/CUFIT-Poster-ffffff?style=for-the-badge&logo=airplayvideo&logoColor=green&labelColor=black&color=green' alt='Poster'>
    </a>
 </p>
 
