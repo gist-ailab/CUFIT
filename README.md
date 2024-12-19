@@ -174,5 +174,12 @@ The source code of this repository is released only for academic use. See the [l
 ### 📚 Citation
 If you use CUFIT in your research, please consider citing us.
 ```bibtex
-TBD
+@inproceedings{
+yu2024curriculum,
+title={Curriculum Fine-tuning of Vision Foundation Model for Medical Image Classification Under Label Noise},
+author={Yeonguk Yu and Minhwan Ko and Sungho Shin and Kangmin Kim and Kyoobin Lee},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=vYUx8j5KK2}
+}
 ```
