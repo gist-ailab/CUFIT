@@ -72,7 +72,7 @@ pip install -r requirement.txt
 <details>
 <summary>HAM10000 preparation</summary>
    
-1. Download the training data, training ground truth, Test data, Test ground truth of task 3 in <a href="https://sites.google.com/view/gistailab/">this link</a>.
+1. Download the training data, training ground truth, Test data, Test ground truth of task 3 in <a href="https://challenge.isic-archive.com/data/#2018">this link</a>.
    
 2. Place the zip files in "CUFIT/data" folder and extract them.
    
